@@ -28,13 +28,14 @@ I have used resized images, halving both width and height to make the model fast
 I have also masked top and bottom of each image so the model learns from what is truly
 relevant for driving -- the view of the road and not the bonnet or the sky features.
 
-I have experimented with the model inspired by [NVIDIA paper](http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf).
+I have experimented with the model inspired by [NVIDIA paper](http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf)
 and with the model provided by [Comma.ai](https://github.com/commaai/research/blob/master/train_steering_model.py).
 Of the two I have chosen NVIDIA as it was simpler and gave better results.
 
 ## Model Architecture
 
 The final network architecture has about 890k parameters and the following layers:
+
 1. normalization (Lambda x/127.5-1.0)
 2. convolution 5x5 with 24 output channels and 2x2 stride, relu activations
 3. convolution 5x5 with 36 output channels and 2x2 stride, relu activations
@@ -44,6 +45,7 @@ The final network architecture has about 890k parameters and the following layer
 7. fully connected layer with 300 units, rely activation
 8. fully connected layer with 10 units, no activation
 9. output layer with 1 unit, no activation
+
 
 ## Training
 
